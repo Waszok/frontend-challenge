@@ -13,7 +13,16 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Public sans", sans-serif;
+    font-size: $fontMed;
+    font-weight: 300;
+    color: $grayishBlue;
     line-height: 1.3;
+}
+
+a,
+a:visited,
+a:hover {
+    text-decoration: none;
 }
 
 //Flexbox
@@ -31,5 +40,30 @@ body {
 
     &-ai-c {
         align-items: center;
+    }
+}
+
+//Butons
+
+button,
+.button {
+    padding: 0.875rem 2.1875rem;
+    background: linear-gradient(to right, $limeGreen, $brightCyan);
+    border: 0;
+    border-radius: 50px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+//Visibility
+.hide-for-mobile {
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(large) {
+        display: none;
     }
 }
